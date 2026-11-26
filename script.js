@@ -48,6 +48,7 @@ const playlist = [
 // ===================================
 
 const audio = document.getElementById("audioPlayer");
+audio.preload = "none";
 
 const playButton = document.getElementById("playButton");
 const stopButton = document.getElementById("stopButton");
@@ -263,3 +264,113 @@ audio.addEventListener("error", () => {
 // ===================================
 
 setPlayerState("stop");
+
+
+// ===================================
+// WEBSITE LOADING SYSTEM
+// ===================================
+
+// All button images
+const essentialAssets = [
+
+    // Button 1
+    "./images/button1-normal.png",
+    "./images/button1-pressed.png",
+
+    // Button 2
+    "./images/button2-normal.png",
+    "./images/button2-pressed.png",
+
+    // Button 3
+    "./images/button3-normal.png",
+    "./images/button3-pressed.png",
+
+    // Button 4
+    "./images/button4-normal.png",
+    "./images/button4-pressed.png",
+
+    // Button 5
+    "./images/button5-normal.png",
+    "./images/button5-pressed.png",
+
+    // Button 6
+    "./images/button6-normal.png",
+    "./images/button6-pressed.png"
+
+];
+
+
+// ===================================
+// PRELOAD IMAGES
+// ===================================
+
+function preloadImage(src) {
+
+    return new Promise(resolve => {
+
+        const img = new Image();
+
+        img.onload = resolve;
+
+        img.onerror = () => {
+            console.warn("Could not load image:", src);
+            resolve();
+        };
+
+        img.src = src;
+
+        if (img.complete) {
+            resolve();
+        }
+
+    });
+
+}
+
+
+// ===================================
+// START LOADING
+// ===================================
+
+async function startLoading() {
+
+    // Wait for the website to finish loading
+    if (document.readyState !== "complete") {
+
+        await new Promise(resolve => {
+
+            window.addEventListener(
+                "load",
+                resolve,
+                { once: true }
+            );
+
+        });
+
+    }
+
+    // Load all essential images
+    await Promise.all(
+        essentialAssets.map(src => preloadImage(src))
+    );
+
+    // Wait for fonts, if available
+    if (document.fonts) {
+        await document.fonts.ready;
+    }
+
+    // Hide loading screen
+    const loader = document.getElementById("pageLoader");
+
+    loader.classList.add("is-hidden");
+
+    console.log("Website loaded successfully!");
+
+}
+
+
+// ===================================
+// INITIALIZE
+// ===================================
+
+startLoading();
