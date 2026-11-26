@@ -1,0 +1,337 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("./Media/background.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+
+.main-container {
+    width: 60%;
+    max-width: 1200px;
+    min-height: 100vh;
+
+    margin: 160px auto;
+    padding: 40px;
+
+    /* Glass effect */
+    background: rgba(0, 0, 0, 0.28);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(12px);
+
+    /* Subtle glass border */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    /* Soft rounded corners */
+    border-radius: 25px;
+
+    /* Gentle shadow */
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.3);
+}
+
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+.title-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: -140px;
+    margin-bottom: 30px;
+}
+
+
+.title-container img {
+    max-width: 80%;
+    max-height: 180px;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    /* Glow effect */
+    filter:
+        drop-shadow(0 0 8px rgba(255, 255, 255, 0.35))
+        drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+}
+
+
+.about-section {
+    width: 100%;
+    max-width: 800px;
+
+    margin: 30px auto;
+    padding: 25px 30px;
+
+    /* Frosted glass */
+    background: rgba(7, 0, 83, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+
+    color: white;
+}
+
+.about-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.about-section p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+
+.top-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    align-items: start;
+    margin-top: 20px;
+}
+
+/* About section */
+.about-section {
+    width: 100%;
+    margin: 0;
+}
+
+
+
+
+.Player {
+    position: relative;
+    margin: 0 auto;
+
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.Player img {
+    width: 100%;
+    height: auto;
+    filter: brightness(70%);
+    display: block;
+}
+
+
+.playButton {
+
+    position: absolute;
+    left: 33%;
+    top: 70.3%;
+
+    transform: translate(-50%, -50%);
+
+    width: 14%;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.playButton img {
+    width: 190%;
+    height: auto;
+    filter: brightness(70%);
+    display: block;
+    transition: filter 0.2s ease;
+}
+
+
+
+
+
+.stopButton {
+
+    position: absolute;
+    left: 53%;
+    top: 72.4%;
+
+    transform: translate(-50%, -50%);
+
+    width: 14%;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.stopButton img {
+    width: 209%;
+    height: auto;
+    filter: brightness(70%);
+    display: block;
+    transition: filter 0.2s ease;
+}
+
+
+/* Pressed images are initially invisible */
+.pressed-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+/* Normal brightness */
+.normal-image {
+    filter: brightness(70%);
+    transition: filter 0.2s ease;
+}
+
+/* Hover brightness */
+.playButton:hover .normal-image,
+.stopButton:hover .normal-image {
+    filter: brightness(100%);
+}
+
+/* PLAY stays pressed when its class is added */
+.playButton.is-playing .normal-image {
+    opacity: 0;
+}
+
+.playButton.is-playing .pressed-image {
+    opacity: 1;
+}
+
+/* STOP is pressed only while holding the mouse */
+.stopButton:active .normal-image {
+    opacity: 0;
+}
+
+.stopButton:active .pressed-image {
+    opacity: 1;
+}
+
+
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: repeat(2, 20vw);
+    gap: 20px;
+
+    justify-content: center;
+    align-content: center;
+
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+/* General button appearance */
+.image-button {
+    width: 100%;
+    height: auto;
+
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    filter: brightness(70%);
+    transition: filter 0.3s ease;
+}
+
+/* Button 1 images */
+.button-1 {
+    --normal: url("./Media/abba-unpressed.png");
+    --pressed: url("./Media/abba-pressed.png");
+}
+
+/* Button 2 images */
+.button-2 {
+    --normal: url("./Media/gary-moore-unpressed.png");
+    --pressed: url("./Media/gary-moore-pressed.png");
+}
+
+/* Button 3 images */
+.button-3 {
+    --normal: url("./Media/cem-karaca-unpressed.png");
+    --pressed: url("./Media/cem-karaca-pressed.png");
+}
+
+/* Button 4 images */
+.button-4 {
+    --normal: url("./Media/jimmy-fontana-unpressed.png");
+    --pressed: url("./Media/jimmy-fontana-pressed.png");
+}
+
+/* Button 5 images */
+.button-5 {
+    --normal: url("./Media/louis-armstrong-unpressed.png");
+    --pressed: url("./Media/louis-armstrong-pressed.png");
+}
+
+/* Button 6 images */
+.button-6 {
+    --normal: url("./Media/marty-robbins-unpressed.png");
+    --pressed: url("./Media/marty-robbins-pressed.png");
+}
+
+/* Default: unselected images */
+.image-button {
+    background-image: var(--normal);
+}
+
+/* Selected: pressed images */
+.image-button.selected {
+    background-image: var(--pressed);
+}
+
+/* Hover: brighten only unselected buttons */
+.image-button:not(.selected):hover {
+    filter: brightness(100%);
+}
+
+/* Keyboard accessibility */
+.image-button:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+}

@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <div class="title-container">
+            <img src="./Media/title.png" alt="Website Title">
+        </div>
+
+        <div class="top-layout">
+
+            <!-- About Me -->
+
+
+            <!-- Cassette Player -->
+
+            <div class="Player">
+                <img src="./Media/Vintage Cassette Player Graphic.png" alt="MainBody" class="mainBody">
+
+
+
+
+                <button class="playButton" id="playButton">
+                    <img class="normal-image" src="./Media/Retro Cassette Player Sprite Sheet (1).png">
+                    <img class="pressed-image" src="./Media/Retro Cassette Player Sprite Sheet (2).png">
+                </button>
+
+                <button class="stopButton" id="stopButton">
+                    <img class="normal-image" src="./Media/Retro Cassette Player Sprite Sheet (4).png">
+                    <img class="pressed-image" src="./Media/Retro Cassette Player Sprite Sheet (3).png">
+                </button>
+
+                <audio id="audioPlayer" preload="metadata"></audio>
+
+            </div>
+
+            <div class="playList">
+
+                <div class="button-container">
+
+                    <button class="image-button button-1"
+                        data-track="0" type="button"
+                        aria-label="Song 1" aria-pressed="false"></button>
+
+                    <button class="image-button button-2"
+                        data-track="1" type="button"
+                        aria-label="Song 2" aria-pressed="false"></button>
+
+                    <button class="image-button button-3"
+                        data-track="2" type="button"
+                        aria-label="Song 3" aria-pressed="false"></button>
+
+                    <button class="image-button button-4"
+                        data-track="3" type="button"
+                        aria-label="Song 4" aria-pressed="false"></button>
+
+                    <button class="image-button button-5"
+                        data-track="4" type="button"
+                        aria-label="Song 5" aria-pressed="false"></button>
+
+                    <button class="image-button button-6"
+                        data-track="5" type="button"
+                        aria-label="Song 6" aria-pressed="false"></button>
+
+                </div>     
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
