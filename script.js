@@ -273,32 +273,31 @@ setPlayerState("stop");
 // All button images
 const essentialAssets = [
 
-    // Button 1
-    "./images/button1-normal.png",
-    "./images/button1-pressed.png",
+    // Button 1 - ABBA
+    "./Media/abba-unpressed.png",
+    "./Media/abba-pressed.png",
 
-    // Button 2
-    "./images/button2-normal.png",
-    "./images/button2-pressed.png",
+    // Button 2 - Gary Moore
+    "./Media/gary-moore-unpressed.png",
+    "./Media/gary-moore-pressed.png",
 
-    // Button 3
-    "./images/button3-normal.png",
-    "./images/button3-pressed.png",
+    // Button 3 - Cem Karaca
+    "./Media/cem-karaca-unpressed.png",
+    "./Media/cem-karaca-pressed.png",
 
-    // Button 4
-    "./images/button4-normal.png",
-    "./images/button4-pressed.png",
+    // Button 4 - Jimmy Fontana
+    "./Media/jimmy-fontana-unpressed.png",
+    "./Media/jimmy-fontana-pressed.png",
 
-    // Button 5
-    "./images/button5-normal.png",
-    "./images/button5-pressed.png",
+    // Button 5 - Louis Armstrong
+    "./Media/louis-armstrong-unpressed.png",
+    "./Media/louis-armstrong-pressed.png",
 
-    // Button 6
-    "./images/button6-normal.png",
-    "./images/button6-pressed.png"
+    // Button 6 - Marty Robbins
+    "./Media/marty-robbins-unpressed.png",
+    "./Media/marty-robbins-pressed.png"
 
 ];
-
 
 // ===================================
 // PRELOAD IMAGES
